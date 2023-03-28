@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="479.0" prefWidth="691.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.QuarterlyController">
+   <children>
+      <VBox alignment="CENTER" layoutX="23.0" layoutY="13.0" prefHeight="451.0" prefWidth="652.0">
+         <children>
+            <BarChart fx:id="quarterlyGraph" prefHeight="392.0" prefWidth="576.0" title="Quarterly Sales Amount of Each Type of Product">
+              <xAxis>
+                <CategoryAxis label="Product Type" side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis label="Amount" side="LEFT" />
+              </yAxis>
+            </BarChart>
+            <Label fx:id="revenueLabel" alignment="TOP_LEFT" wrapText="true">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

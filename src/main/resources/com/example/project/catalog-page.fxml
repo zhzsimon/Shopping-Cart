@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="584.0" prefWidth="732.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.CatalogController">
+   <children>
+      <TableView fx:id="catalogTable" layoutX="18.0" layoutY="12.0" prefHeight="563.0" prefWidth="706.0">
+        <columns>
+          <TableColumn fx:id="catalogId" prefWidth="63.19997787475586" text="ID" />
+          <TableColumn fx:id="catalogProduct" prefWidth="78.0" text="Product" />
+            <TableColumn fx:id="catalogGender" prefWidth="77.5999755859375" text="Gender" />
+            <TableColumn fx:id="catalogColor" prefWidth="68.00001525878906" text="Color" />
+            <TableColumn fx:id="catalogSize" prefWidth="73.0" text="Size" />
+            <TableColumn fx:id="catalogAvail" prefWidth="132.60003662109375" text="Available Amount" />
+            <TableColumn fx:id="catalogOrigPrice" prefWidth="87.20001220703125" text="Original Price" />
+            <TableColumn fx:id="catalogDiscPrice" prefWidth="124.0" text="15%-Dicount Price" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
