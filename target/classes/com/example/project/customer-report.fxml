@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="637.0" prefWidth="722.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.CustomerReportController">
+   <children>
+      <BarChart fx:id="gender_bar" layoutX="14.0" layoutY="14.0" legendSide="TOP" prefHeight="264.0" prefWidth="373.0" title="Gender distribution of customers">
+        <xAxis>
+          <CategoryAxis label="Gender" side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis label="Numbers" side="LEFT" />
+        </yAxis>
+      </BarChart>
+      <BarChart fx:id="age_bar" layoutX="306.0" layoutY="297.0" prefHeight="293.0" prefWidth="374.0" title="Age Disribution of Customers">
+        <xAxis>
+          <CategoryAxis label="Age" side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis label="Amount" side="LEFT" />
+        </yAxis>
+      </BarChart>
+   </children>
+</AnchorPane>

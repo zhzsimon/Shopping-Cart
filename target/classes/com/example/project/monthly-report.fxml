@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="621.0" prefWidth="710.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.MonthlyReportController">
+   <children>
+      <VBox layoutX="19.0" layoutY="19.0" prefHeight="420.0" prefWidth="675.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="20.0" prefWidth="174.0" text="Select a Product Type:">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <ChoiceBox fx:id="typeSelector" prefWidth="150.0" />
+                  <Button mnemonicParsing="false" onAction="#fillTable" prefHeight="23.0" prefWidth="61.0" text="Search">
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <TableView fx:id="monthlyTable" prefHeight="305.0" prefWidth="474.0">
+              <columns>
+                <TableColumn fx:id="monthlyId" prefWidth="75.0" text="ID" />
+                <TableColumn fx:id="monthlyProduct" prefWidth="75.0" text="Product" />
+                  <TableColumn fx:id="monthlyGender" prefWidth="75.0" text="Gender" />
+                  <TableColumn fx:id="monthlyColor" prefWidth="75.0" text="Color" />
+                  <TableColumn fx:id="monthlySize" prefWidth="75.0" text="Size" />
+                  <TableColumn fx:id="monthlyPrice" prefWidth="75.0" text="Price" />
+                  <TableColumn fx:id="soldColumn" prefWidth="126.20004272460938" text="Monthly Sold" />
+              </columns>
+            </TableView>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

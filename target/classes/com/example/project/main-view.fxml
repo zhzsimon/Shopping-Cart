@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox fx:id="stage_vbox" prefHeight="620.0" prefWidth="800.0" spacing="-0.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.MainController">
+   <MenuBar prefWidth="394.0">
+     <menus>
+         <Menu mnemonicParsing="false" text="File">
+           <items>
+             <MenuItem mnemonicParsing="false" onAction="#displayEnterItemWindow" text="Enter Order" />
+           </items>
+         </Menu>
+       <Menu mnemonicParsing="false" text="View Reports">
+         <items>
+           <MenuItem mnemonicParsing="false" onAction="#displayCustomerReport" text="Customer Demographic Report" />
+               <MenuItem mnemonicParsing="false" onAction="#displayMonthlyReport" text="Monthly Report" />
+               <MenuItem mnemonicParsing="false" onAction="#displayQuarterlyReport" text="Quarterly Sales Report" />
+         </items>
+       </Menu>
+       <Menu mnemonicParsing="false" text="Catalog">
+         <items>
+               <MenuItem mnemonicParsing="false" onAction="#displayRandomCatalog" text="Generate Catalog" />
+         </items>
+       </Menu>
+     </menus>
+   </MenuBar>
+   <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="616.0" prefWidth="478.0">
+     <items>
+         <Pane prefHeight="200.0" prefWidth="200.0">
+            <children>
+               <VBox layoutX="26.0" layoutY="47.0">
+                  <children>
+                     <HBox prefHeight="168.0" prefWidth="200.0">
+                        <children>
+                           <VBox alignment="CENTER_LEFT" prefWidth="86.0">
+                              <children>
+                                 <Label prefHeight="40.0" text="Item ID: ">
+                                    <VBox.margin>
+                                       <Insets top="5.0" />
+                                    </VBox.margin></Label>
+                                 <Label prefHeight="40.0" text="Product Type: " />
+                                 <Label prefHeight="40.0" text="Gender: " />
+                                 <Label prefHeight="40.0" text="Color: " />
+                                 <Label prefHeight="40.0" text="Size: " />
+                              </children>
+                           </VBox>
+                           <VBox alignment="CENTER" prefWidth="100.0">
+                              <children>
+                                 <TextField fx:id="select_id">
+                                    <VBox.margin>
+                                       <Insets top="10.0" />
+                                    </VBox.margin>
+                                 </TextField>
+                                 <ChoiceBox fx:id="select_type" prefWidth="150.0">
+                                    <VBox.margin>
+                                       <Insets top="10.0" />
+                                    </VBox.margin>
+                                 </ChoiceBox>
+                                 <TextField fx:id="select_gender">
+                                    <VBox.margin>
+                                       <Insets top="15.0" />
+                                    </VBox.margin>
+                                 </TextField>
+                                 <TextField fx:id="select_color">
+                                    <VBox.margin>
+                                       <Insets top="15.0" />
+                                    </VBox.margin>
+                                 </TextField>
+                                 <TextField fx:id="select_size">
+                                    <VBox.margin>
+                                       <Insets top="15.0" />
+                                    </VBox.margin>
+                                 </TextField>
+                              </children>
+                           </VBox>
+                        </children>
+                     </HBox>
+                  </children>
+               </VBox>
+               <ButtonBar buttonOrder="U+FBIX_NCYOA_R" layoutX="3.0" layoutY="215.0" prefHeight="73.0" prefWidth="266.0">
+                 <buttons>
+                   <Button mnemonicParsing="false" onAction="#searchClicked" text="Search" />
+                     <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#addToCart" prefHeight="23.0" prefWidth="101.0" text="Add to cart" />
+                     <Button mnemonicParsing="false" onAction="#refreshTable" text="Refresh" />
+                 </buttons>
+               </ButtonBar>
+               <VBox layoutX="282.0" layoutY="23.0" prefHeight="240.0" prefWidth="516.0">
+                  <children>
+                     <HBox>
+                        <children>
+                           <Label alignment="TOP_LEFT" prefHeight="22.0" text="The Cart: ">
+                              <font>
+                                 <Font size="15.0" />
+                              </font>
+                           </Label>
+                           <HBox alignment="TOP_RIGHT" prefHeight="23.0" prefWidth="446.0">
+                              <children>
+                                 <Label prefHeight="20.0" prefWidth="48.0" text="Total:">
+                                    <font>
+                                       <Font size="15.0" />
+                                    </font>
+                                 </Label>
+                                 <TextField fx:id="total_cost" alignment="CENTER" disable="true" nodeOrientation="LEFT_TO_RIGHT" prefHeight="23.0" prefWidth="71.0" />
+                              </children>
+                           </HBox>
+                        </children>
+                     </HBox>
+                     <TableView fx:id="cart" prefHeight="194.0" prefWidth="218.0">
+                       <columns>
+                           <TableColumn fx:id="cart_id" prefWidth="82.20001220703125" text="ID" />
+                         <TableColumn fx:id="cart_product" prefWidth="71.39999389648438" text="product" />
+                         <TableColumn fx:id="cart_gender" prefWidth="66.800048828125" text="gender" />
+                           <TableColumn fx:id="cart_color" prefWidth="58.79998779296875" text="color" />
+                           <TableColumn fx:id="cart_size" prefWidth="56.5999755859375" text="size" />
+                           <TableColumn fx:id="cart_amount" onEditCommit="#editCartAmount" prefWidth="68.79998779296875" text="Quantity" />
+                           <TableColumn fx:id="cart_price" prefWidth="67.5999755859375" text="Price" />
+                       </columns>
+                     </TableView>
+                     <ButtonBar buttonOrder="U+FBIX_NCYOA_R">
+                        <buttons>
+                           <Button mnemonicParsing="false" onAction="#removeFromCart" prefHeight="23.0" text="Remove from cart" />
+                           <Button fx:id="checkout_btn" mnemonicParsing="false" onAction="#checkoutClicked" prefHeight="23.0" prefWidth="175.0" text="Checkout" />
+                        </buttons>
+                     </ButtonBar>
+                  </children>
+               </VBox>
+               <Label fx:id="message" alignment="CENTER" layoutX="281.0" layoutY="263.0" prefHeight="24.0" prefWidth="516.0" textAlignment="CENTER" textFill="#fa0404">
+                  <padding>
+                     <Insets top="5.0" />
+                  </padding>
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+               </Label>
+            </children>
+         </Pane>
+         <TableView fx:id="table" prefHeight="247.0" prefWidth="476.0">
+           <columns>
+               <TableColumn fx:id="product_id" prefWidth="67.20001070499438" text="ID" />
+             <TableColumn fx:id="product_type" maxWidth="119.99999237060547" prefWidth="99.1999740600586" text="product type" />
+             <TableColumn fx:id="product_gender" maxWidth="87.39999389648438" minWidth="0.0" prefWidth="74.0" text="gender" />
+               <TableColumn fx:id="product_color" maxWidth="75.60005187988281" prefWidth="64.00001525878906" text="color" />
+               <TableColumn fx:id="available_number" maxWidth="117.00000381469727" prefWidth="70.5999755859375" text="Amount" />
+               <TableColumn fx:id="product_size" prefWidth="51.79998779296875" text="Size" />
+               <TableColumn fx:id="product_price" prefWidth="57.79998779296875" text="Price" />
+               <TableColumn fx:id="product_availability" minWidth="0.0" prefWidth="76.00003051757812" text="Availability" />
+               <TableColumn fx:id="product_description" prefWidth="223.0" text="Description" />
+           </columns>
+         </TableView>
+     </items>
+   </SplitPane>
+</VBox>
